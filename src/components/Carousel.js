@@ -26,35 +26,32 @@ export default function CarouselVertical(props){
             renderItem = {(item) => <RenderItem data = {item}/>}
             sliderWidth = {width}
             itemWidth = {ITEM_WIDTH}
-            //itemHeight = {}
-            firstItem = {1}
+            firstItem = {0}
         />
     )
 }
 
 function RenderItem(props){
-    //const{data} = props
+    const{data} = props
+    console.log(data)
+
     return(
         <View style = {styles.container}>
-            <Text>Hola</Text>
+            <Text>
+                {data.index}
+            </Text>
         </View>
     ) 
 }
 
 const styles = StyleSheet.create({
     container:{
-        shadowColor: "#000",
-        shadowOffset:{
-            width: 0,
-            height: 10
-        },
-        shadowOpacity: 1,
-        shadowRadius: 10,
+        //elevation: 1,
         width: "100%",
         height: "95%", 
-        borderRadius: 20,
-        backgroundColor: "red",
+        borderRadius:20,
+        borderColor: "#000",
+        backgroundColor: "#F0F0F0",
         marginVertical: 20
-        //flex: 1
     }
 })
