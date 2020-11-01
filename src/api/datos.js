@@ -1,13 +1,12 @@
 
-const URL_HOST = "https://api.covid19tracking.narrativa.com/api" 
+const URL_HOST = "https://api.covid19tracking.narrativa.com/api/2020-09-22/country/chile" 
 
-export function getCasosHoy(){
-    const url = `${URL_HOST}/2020-09-22/country/chile`
-    
-    return fetch(url).then((response) =>{
-        return response.json()
-    })
-    .then((result) => {
-        return result
-    })
+
+export function fetchApi() {
+    fetch(URL_HOST)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result)
+            return result
+        })
 }

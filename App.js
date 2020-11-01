@@ -1,25 +1,22 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, ScrollView, SafeAreaView, View, Text} from 'react-native'
-import Carousel from "./src/components/Carousel" 
-import {getCasosHoy} from "./src/api/datos"
+import {
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  View,
+  Text} from 'react-native'
+import Carousel from "./src/components/Carousel"
+import colors from './src/config/colors'
 
-export default function App() {
-  const [info, setInfoGeneral] = useState(null)
-  const [infoRegiones, setInfoRegiones] = useState(null)
-
-    useEffect(() => {
-        getCasosHoy().then((response) => {
-            setInfoGeneral(response)
-            setInfoRegiones(response.dates["2020-09-22"].countries.Chile.regions)  
-        })
-    }, [])
-    console.log(infoRegiones)
-    
-  return (
-    <SafeAreaView>
-      <View style = {styles}>
-        <Carousel data = {infoRegiones}/>
+export default function App() {  
+  return ( 
+    <SafeAreaView style = {styles.container}>
+      <View style = {styles.view}>
+        <Text style = {styles.text}>
+          Info por Regiones
+        </Text>
       </View>
+          <Carousel/>
     </SafeAreaView>
   )
 }
@@ -27,6 +24,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    //backgroundColor:"red"
+  },
+  view:{
+    alignItems: "center",
+    paddingTop: 30,
+    paddingBottom:10
+  },
+  text:{
+    fontSize: 25,
+    fontWeight: "bold",
+    color: colors.secundario
   }
-})
+}) 
