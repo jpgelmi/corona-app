@@ -20,19 +20,32 @@ export default function CarouselVertical(){
 
     const [infoRegiones, setInfoRegiones] = useState(null)
     const current_date = new Date()
-    //const formatted_date = current_date.getDate() + "-" + (current_date.getMonth() + 1) + "-" + current_date.getFullYear()
-    const formatted_date = current_date.getFullYear() + "-" + (current_date.getMonth() + 1) + "-" + current_date.getDate()
+    
+    var dd = current_date.getDate()
+    var mm = current_date.getMonth() + 1
+    var yyyy = current_date.getFullYear()
+
+    if(dd<10){
+        dd = "0"+ dd
+    }
+
+    if(mm<10){
+        mm = "0"+ mm
+    }
+
+
+    const formatted_date = yyyy + "-" + mm + "-" + dd
     console.log(formatted_date)
 
-    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/2020-09-11/country/chile` 
+    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile` 
     console.log(URL_HOST)
     useEffect(() => {
 
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result.dates["2020-09-11"])
-            setInfoRegiones(result.dates["2020-09-11"].countries.Chile.regions)
+            //console.log(result.dates)
+            setInfoRegiones(result.dates[`${formatted_date}`].countries.Chile.regions)
         })
     },[])
     
@@ -51,11 +64,9 @@ export default function CarouselVertical(){
 } 
 
 function RenderItem(props){
-    const currentDate = new Date()
-    //const formatted_date = current_date.getDate() + "-" + (current_date.getMonth() + 1) + "-" + current_date.getFullYear()
-    //const date = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate()
+
     const{data} = props
-    console.log(data)
+
 
     return(
         <View style = {styles.container}>
