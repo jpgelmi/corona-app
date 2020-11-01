@@ -24,15 +24,15 @@ export default function CarouselVertical(){
     const formatted_date = current_date.getFullYear() + "-" + (current_date.getMonth() + 1) + "-" + current_date.getDate()
     console.log(formatted_date)
 
-    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/2020-9-11/country/chile` 
+    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/2020-09-11/country/chile` 
     console.log(URL_HOST)
     useEffect(() => {
 
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result.dates)
-            setInfoRegiones(result.dates["2020-9-11"].countries.Chile.regions)
+            console.log(result.dates["2020-09-11"])
+            setInfoRegiones(result.dates["2020-09-11"].countries.Chile.regions)
         })
     },[])
     
@@ -60,7 +60,7 @@ function RenderItem(props){
     return(
         <View style = {styles.container}>
             <Text style = {styles.text}>
-                hola
+                {data.item.name_es}
             </Text>
             <View style = {{alignItems: "center", flex: 1}}>
                 <View style = {[styles.mini_card, {backgroundColor: colors.secundario}]}>
