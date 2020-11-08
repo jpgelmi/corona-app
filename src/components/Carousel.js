@@ -4,11 +4,13 @@ import {
     View,
     Text,
     Dimensions,
+    ActivityIndicator
 } from 'react-native'
 
 import colors from "../config/colors"
 
 import Carousel from 'react-native-snap-carousel';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const{width} = Dimensions.get("window")
 const ITEM_WIDTH = Math.round(width * 0.8)
@@ -51,16 +53,25 @@ export default function CarouselVertical(){
     
     //console.log(infoRegiones.dates["2020-09-22"].countries)
 
-    return(
-        <Carousel
-            layout = {"default"}
-            data = {infoRegiones}
-            renderItem = {(item) => <RenderItem data = {item}/>}
-            sliderWidth = {width}
-            itemWidth = {ITEM_WIDTH}
-            firstItem = {0}
-        />
-    )
+    {if(infoRegiones){
+        return(
+            <Carousel
+                layout = {"default"}
+                data = {infoRegiones}
+                renderItem = {(item) => <RenderItem data = {item}/>}
+                sliderWidth = {width}
+                itemWidth = {ITEM_WIDTH}
+                firstItem = {0}/>
+            )
+    }else{
+        return(
+            <View style = {{flex: 1, paddingTop: 100}}>
+                <ActivityIndicator size = {100} color = {colors.secundario}/>
+            </View>
+        )
+    }}
+
+        
 } 
 
 function RenderItem(props){
