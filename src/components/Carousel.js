@@ -9,7 +9,7 @@ import {
 
 import colors from "../config/colors"
 
-import Carousel from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const{width} = Dimensions.get("window")
@@ -65,13 +65,24 @@ export default function CarouselVertical(){
                 renderItem = {(item) => <RenderItem data = {item}/>}
                 sliderWidth = {width}
                 itemWidth = {ITEM_WIDTH}
-                firstItem = {0}/>
+                firstItem = {0}
+            />
+            {/*<Pagination
+                activeDotIndex = {0}
+                dotsLength = {13}
+                activeDotIndex = {activeSlide}
+
+            />*/}
             </>
+    
             )
     }else{
         return(
             <View style = {{flex: 1, paddingTop: 100}}>
-                <ActivityIndicator size = {100} color = {colors.secundario}/>
+                <ActivityIndicator
+                    size = {100}
+                    color = {colors.secundario}
+                />
             </View>
         )
     }}

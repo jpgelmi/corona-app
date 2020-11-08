@@ -8,7 +8,7 @@ import {
   Text} from 'react-native'
 import Carousel from "./src/components/Carousel"
 import colors from './src/config/colors'
-import GeneralView from "./src/components/GeneralView"
+import InfoMundial from "./src/components/InfoMundial"
 import { ScrollView } from 'react-native-gesture-handler'
 
 export default function App() {  
@@ -18,7 +18,7 @@ export default function App() {
       <View style = {styles.view}>
       </View>
         <View style = {{alignItems: "center"}}>
-          <GeneralView/>
+          <InfoMundial/>
           <Carousel/>
         </View>
       <TouchableOpacity
