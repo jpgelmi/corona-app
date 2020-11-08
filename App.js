@@ -10,6 +10,7 @@ import Carousel from "./src/components/Carousel"
 import InfoMundial from "./src/components/InfoMundial"
 import InfoChile from "./src/components/InfoChile"
 import { ScrollView } from 'react-native-gesture-handler'
+import GraficoChile from "./src/components/GraficoChile"
 
 export default function App() {  
   return (
@@ -21,7 +22,10 @@ export default function App() {
           <InfoMundial/>
           <InfoChile/>
         </View>
-          <Carousel/>
+        <View style = {{alignItems: "center"}}>
+          <GraficoChile/> 
+        </View>
+        <Carousel/>
       <TouchableOpacity
         style = {{alignItems: "center"}}
         onPress = {() =>Linking.openURL("https://www.instagram.com/jpgelmi/")}
