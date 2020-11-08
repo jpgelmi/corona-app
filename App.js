@@ -7,20 +7,21 @@ import {
   View,
   Text} from 'react-native'
 import Carousel from "./src/components/Carousel"
-import colors from './src/config/colors'
 import InfoMundial from "./src/components/InfoMundial"
+import InfoChile from "./src/components/InfoChile"
 import { ScrollView } from 'react-native-gesture-handler'
 
 export default function App() {  
-  return ( 
+  return (
     <SafeAreaView style = {styles.container}>
       <ScrollView>
       <View style = {styles.view}>
       </View>
-        <View style = {{alignItems: "center"}}>
+        <View style = {styles.columns}>
           <InfoMundial/>
-          <Carousel/>
+          <InfoChile/>
         </View>
+          <Carousel/>
       <TouchableOpacity
         style = {{alignItems: "center"}}
         onPress = {() =>Linking.openURL("https://www.instagram.com/jpgelmi/")}
@@ -46,5 +47,10 @@ const styles = StyleSheet.create({
     color: "#C9C9C9",
     fontWeight: "bold",
     paddingBottom:7
+  },
+  columns:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   }
 }) 

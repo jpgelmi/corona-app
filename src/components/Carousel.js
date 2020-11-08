@@ -55,7 +55,7 @@ export default function CarouselVertical(){
 
     {if(infoRegiones){
         return(
-            <>
+            <View style = {{alignItems: "center"}}>
             <Text style = {styles.textTitulo}>
                 Información regiones
             </Text>
@@ -73,7 +73,7 @@ export default function CarouselVertical(){
                 activeDotIndex = {activeSlide}
 
             />*/}
-            </>
+            </View>
     
             )
     }else{

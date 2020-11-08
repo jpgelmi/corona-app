@@ -8,4 +8,8 @@ export default {
     primario_rojo: "#ff3232",
     secundario_rojo: "#ff6666",
     rojo_agua: "#ffb2b2",
+
+    primario_verde: "#008000" ,
+    secundario_verde: "#4AC948",
+    verde_agua: "#43D58C"
 }

@@ -9,9 +9,10 @@ import {
 
 import colors from "../config/colors"
 
-export default function GeneralData(){
+export default function infoChile(){
 
-    const [infoMundial, setInfoMundial] = useState(null)
+    const [infoChile, setInfoChile] = useState(null)
+    //Sacar la fecha de hoy y de ayer
     const current_date = new Date()
     
     var dd = current_date.getDate()
@@ -26,56 +27,74 @@ export default function GeneralData(){
         mm = "0"+ mm
     }
 
-    const formatted_date = yyyy + "-" + mm + "-" + dd
-    console.log(formatted_date)
+    var last_date = new Date();
+    last_date.setDate(last_date.getDate() - 1);
 
-    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile` 
-    console.log(URL_HOST)
+    let last_dd = last_date.getDate()
+    let last_mm = last_date.getMonth() + 1
+    let last_yyyy = last_date.getFullYear()
+
+    if(last_dd<10){
+        last_dd = "0"+ last_dd
+    }
+
+    if(last_mm<10){
+        last_mm = "0"+ last_mm
+    }
+
+    const formatted_date = yyyy + "-" + mm + "-" + dd
+    
+    const formatted_last_date = last_yyyy + "-" + last_mm + "-" + last_dd
+    //console.log(formatted_last_date)
+
+    const URL_HOST = `https://api.covid19api.com/country/chile?from=${formatted_last_date}T00:00:00Z&to=${formatted_date}T00:00:00Z` 
+    //console.log(URL_HOST)
     useEffect(() => {
 
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result.total)
-            setInfoMundial(result.total)
+            console.log(result)
+            setInfoChile(result)
         })
     },[])
     
 
-    {if(infoMundial){
+    {if(infoChile){
+        //console.log(infoChile[0].Country)
         return(
             <View style = {styles.container}>
                 <Text style = {styles.text}>
-                    Información Mundial
+                    Información {"\n"} Chile 
                 </Text>
                 <View style = {{alignItems: "center", flex: 1}}>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.primario_rojo}]}>
+                    <View style = {[styles.mini_card, {backgroundColor: colors.primario_verde}]}>
                         <Text style = {styles.textInfo}>
                             Casos Totales
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoMundial.today_confirmed)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {infoChile[0].Confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.secundario_rojo}]}>
+                    <View style = {[styles.mini_card, {backgroundColor: colors.secundario_verde}]}>
                         <Text style = {styles.textInfo}>
                             Casos Activos
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoMundial.today_open_cases)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {((infoChile[0].Active)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.rojo_agua}]}>
+                    <View style = {[styles.mini_card, {backgroundColor: colors.verde_agua}]}>
                         <Text style = {styles.textInfo}>
                             Muertes Totales
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoMundial.today_deaths)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {((infoChile[0].Deaths)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -85,7 +104,7 @@ export default function GeneralData(){
     }else{
         return(
             <View style = {{flex: 1, paddingTop: 100}}>
-                <ActivityIndicator size = {100} color = {colors.primario_rojo}/>
+                <ActivityIndicator size = {100} color = {colors.primario_verde}/>
             </View>
         )
     }}       
