@@ -55,6 +55,10 @@ export default function CarouselVertical(){
 
     {if(infoRegiones){
         return(
+            <>
+            <Text style = {styles.textTitulo}>
+                Información regiones
+            </Text>
             <Carousel
                 layout = {"default"}
                 data = {infoRegiones}
@@ -62,6 +66,7 @@ export default function CarouselVertical(){
                 sliderWidth = {width}
                 itemWidth = {ITEM_WIDTH}
                 firstItem = {0}/>
+            </>
             )
     }else{
         return(
@@ -91,7 +96,7 @@ function RenderItem(props){
                     </Text>
                     <View style = {{alignItems: "center"}}>
                         <Text style = {styles.textCifra}>
-                            {data.item.today_open_cases}
+                            {data.item.today_open_cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                         </Text>
                     </View>
                 </View>
@@ -101,7 +106,7 @@ function RenderItem(props){
                     </Text>
                     <View style = {{alignItems: "center"}}>
                         <Text style = {styles.textCifra}>
-                            {data.item.today_confirmed}
+                            {data.item.today_confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                         </Text>
                     </View>
                 </View>
@@ -111,7 +116,7 @@ function RenderItem(props){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {data.item.today_deaths}
+                                {data.item.today_deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                 </View>
@@ -134,7 +139,8 @@ const styles = StyleSheet.create({
     },
     text: {
         fontWeight: "bold",
-        fontSize: 20
+        fontSize: 20,
+        color: "black"
     },
     mini_card:{
         marginTop: 20,
@@ -154,5 +160,10 @@ const styles = StyleSheet.create({
         fontSize: 40,
         margin: 15,
         color: colors.blanco
-    }
+    },
+    textTitulo:{
+        fontSize: 25,
+        fontWeight: "bold",
+        color: colors.secundario
+      },
 })
