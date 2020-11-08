@@ -34,6 +34,9 @@ import {
     }
       return(
         <View>
+            <Text style = {{fontWeight: "bold", fontSize: 15}}>
+                Informacion Chile
+            </Text>
         <LineChart
           data={{
             labels: ["Ene", "Feb", "Mar", "Abr", "Mayo", "Jun", "Jul", "Agos", "Sep", "Oct", "Nov", "Dic"],
@@ -57,8 +60,8 @@ import {
           yAxisInterval={1} // optional, defaults to 1
           chartConfig={{
             //backgroundColor: "#A9A9A9",
-            backgroundGradientFrom: "#A9A9A9",
-            backgroundGradientTo: "#C0C0C0",
+            backgroundGradientFrom: "#E8E9EB",
+            backgroundGradientTo: "#F0F0F0",
             decimalPlaces: 2, // optional, defaults to 2dp
             color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
             labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,

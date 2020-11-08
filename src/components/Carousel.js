@@ -56,9 +56,6 @@ export default function CarouselVertical(){
     {if(infoRegiones){
         return(
             <View style = {{alignItems: "center"}}>
-            <Text style = {styles.textTitulo}>
-                Información regiones
-            </Text>
             <Carousel
                 layout = {"default"}
                 data = {infoRegiones}
