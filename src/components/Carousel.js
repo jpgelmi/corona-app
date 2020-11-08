@@ -13,7 +13,7 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const{width} = Dimensions.get("window")
-const ITEM_WIDTH = Math.round(width * 0.8)
+const ITEM_WIDTH = Math.round(width * 0.6)
 
 //const{height} = Dimensions.get("window")
 //const ITEM_HEIGTH = Math.round(height)
@@ -62,7 +62,7 @@ export default function CarouselVertical(){
                 renderItem = {(item) => <RenderItem data = {item}/>}
                 sliderWidth = {width}
                 itemWidth = {ITEM_WIDTH}
-                firstItem = {0}
+                firstItem = {1}
             />
             {/*<Pagination
                 activeDotIndex = {0}
@@ -136,42 +136,37 @@ function RenderItem(props){
 const styles = StyleSheet.create({
     container:{
         //elevation: 1,
-        width: "100%",
-        height: "100%", 
+        width: 250,
+        height: 400, 
         borderRadius:20,
         borderColor: "#000",
         backgroundColor: "#F0F0F0",
-        marginVertical: 20,
-        padding: 20,
+        marginVertical: 10,
+        padding: 15,
         flex: 1
     },
     text: {
         fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 19,
         color: "black"
     },
     mini_card:{
         marginTop: 20,
-        height: "30%",
-        width: "95%",
+        height: 90,
+        width: 200,
         backgroundColor: "red",
         borderRadius: 20
     },
     textInfo:{
         fontWeight: "bold",
-        fontSize: 20,
-        margin: 15,
+        fontSize: 15,
+        margin: 7,
         color: colors.blanco
     },
     textCifra:{
         fontWeight: "bold",
-        fontSize: 40,
-        margin: 15,
+        fontSize: 22,
+        margin: 7,
         color: colors.blanco
     },
-    textTitulo:{
-        fontSize: 25,
-        fontWeight: "bold",
-        color: colors.secundario
-      },
 })

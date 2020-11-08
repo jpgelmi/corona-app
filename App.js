@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
   },
   view:{
     alignItems: "center",
-    paddingTop: 30,
     paddingBottom:10
   },
   footerText:{

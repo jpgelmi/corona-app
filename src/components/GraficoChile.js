@@ -34,7 +34,7 @@ import {
     }
       return(
         <View>
-            <Text style = {{fontWeight: "bold", fontSize: 15}}>
+            <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>
                 Informacion Chile
             </Text>
         <LineChart
