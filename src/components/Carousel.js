@@ -23,9 +23,9 @@ export default function CarouselVertical(){
     const [infoRegiones, setInfoRegiones] = useState(null)
     const current_date = new Date()
     
-    var dd = current_date.getDate()
-    var mm = current_date.getMonth() + 1
-    var yyyy = current_date.getFullYear()
+    let dd = current_date.getDate()
+    let mm = current_date.getMonth() + 1
+    let yyyy = current_date.getFullYear()
 
     if(dd<10){
         dd = "0"+ dd

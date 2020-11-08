@@ -15,9 +15,9 @@ export default function infoChile(){
     //Sacar la fecha de hoy y de ayer
     const current_date = new Date()
     
-    var dd = current_date.getDate()
-    var mm = current_date.getMonth() + 1
-    var yyyy = current_date.getFullYear()
+    let dd = current_date.getDate()
+    let mm = current_date.getMonth() + 1
+    let yyyy = current_date.getFullYear()
 
     if(dd<10){
         dd = "0"+ dd
@@ -27,7 +27,7 @@ export default function infoChile(){
         mm = "0"+ mm
     }
 
-    var last_date = new Date();
+    let last_date = new Date();
     last_date.setDate(last_date.getDate() - 1);
 
     let last_dd = last_date.getDate()
