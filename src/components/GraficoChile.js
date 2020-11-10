@@ -13,7 +13,7 @@ import {
     const [data, setData] = useState(null)
     const{width} = Dimensions.get("window")
     const ITEM_WIDTH = Math.round(width * 0.93)
-    let ListaNum = []
+    const ListaNum = [0]
     const URL_HOST = `https://api.covid19api.com/dayone/country/chile` 
     //console.log(URL_HOST)
 
@@ -39,49 +39,50 @@ import {
     }
     
     console.log(ListaNum)
-      return(
-        <View>
-            <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>
-                Informacion Chile
-            </Text>
-        <LineChart
-          data={{
-            labels: [],
-            datasets: [
-              { 
-                data: ListaNum
-              }
-            ]
-          }}
-          width={ITEM_WIDTH} // from react-native
-          height={220}
-          //yAxisLabel={"$"}
-          //yAxisSuffix={"k"}
-          fromZero = {false}
-          yAxisInterval={100} // optional, defaults to 1
-          chartConfig={{
-            //backgroundColor: "#A9A9A9",
-            backgroundGradientFrom: "#E8E9EB",
-            backgroundGradientTo: "#F0F0F0",
-            decimalPlaces: 0, // optional, defaults to 2dp
-            color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-            labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-            style: {
-              borderRadius: 16
-            },
-            propsForDots: {
-              r: "0",
-              strokeWidth: "2",
-              //stroke: "#ffffff"
+    return(
+      <View>
+          <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>
+              Informacion Chile
+          </Text>
+      <LineChart
+        data={{
+          labels: [],
+          datasets: [
+            { 
+              data: ListaNum
             }
-          }}
-          bezier
-          style={{
-            marginVertical: 8,
+          ]
+        }}
+        width={ITEM_WIDTH} // from react-native
+        height={220}
+        //yAxisLabel={"$"}
+        //yAxisSuffix={"k"}
+        fromZero = {false}
+        yAxisInterval={100} // optional, defaults to 1
+        chartConfig={{
+          //backgroundColor: "#A9A9A9",
+          backgroundGradientFrom: "#E8E9EB",
+          backgroundGradientTo: "#F0F0F0",
+          decimalPlaces: 0, // optional, defaults to 2dp
+          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          style: {
             borderRadius: 16
-          }}
-        />
-      </View>
-      )
-  }
+          },
+          propsForDots: {
+            r: "0",
+            strokeWidth: "2",
+            //stroke: "#ffffff"
+          }
+        }}
+        bezier
+        style={{
+          marginVertical: 8,
+          borderRadius: 16
+        }}
+      />
+    </View>
+    )
+}
+
  
