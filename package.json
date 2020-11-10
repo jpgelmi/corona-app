@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.8.6",
+    "lodash": "^4.17.20",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-chart-kit": "^6.6.1",
