@@ -17,7 +17,7 @@ export default function GeneralData(){
     let dd = current_date.getDate()
     let mm = current_date.getMonth() + 1
     let yyyy = current_date.getFullYear()
-
+ 
     if(dd<10){
         dd = "0"+ dd
     }
@@ -36,7 +36,7 @@ export default function GeneralData(){
         .then((result) => {
             setInfoMundial(result.total)
         })
-    },[])
+    },[]) 
     
 
     {if(infoMundial){
