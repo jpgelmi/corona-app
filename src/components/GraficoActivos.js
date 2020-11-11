@@ -9,14 +9,35 @@ import {
     LineChart,
   } from "react-native-chart-kit";
 
-  export default function GraficoChile(){
+  export default function GraficoActivo(){
     const [data, setData] = useState(null)
     const{width} = Dimensions.get("window")
     const ITEM_WIDTH = Math.round(width * 0.93)
     const ListaNum = [0]
     const URL_HOST = `https://api.covid19api.com/dayone/country/chile` 
-    //console.log(URL_HOST)
+    
+    const mes = new Date().getMonth()
+    const year = new Date().getFullYear()
 
+    const meses = ["en", "feb","mzo", "abr", "my", "jun", "jul", "ago", "sep", "oct", "nov"]
+    let Label = []
+    
+    if(year === 2021){
+      let Label = meses
+      for(let i = 0; i <= 11; i++){
+        if (i <= mes) {
+          Label.push(meses[i])
+      }
+    }
+      } else {
+        for (let i = 0; i <= 11; i++) {
+          if (i <= mes) {
+            Label.push(meses[i]);
+            console.log(Label);
+          }
+        }
+      }
+    
     useEffect(() => {
 
         fetch(URL_HOST)
@@ -33,7 +54,6 @@ import {
 
     function limpiarData(){
         data.forEach((item) => {
-          console.log(typeof item.Active )
           ListaNum.push(item.Active)
         });
     }
@@ -44,9 +64,12 @@ import {
           <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>
               Informacion Chile
           </Text>
+          <Text style = {{fontWeight: "bold", fontSize: 15, marginTop: 6}}>
+            Casos activos
+          </Text>
       <LineChart
         data={{
-          labels: [],
+          labels: Label,
           datasets: [
             { 
               data: ListaNum
@@ -84,5 +107,3 @@ import {
     </View>
     )
 }
-
- 

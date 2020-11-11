@@ -54,7 +54,6 @@ export default function infoChile(){
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result)
             setInfoChile(result)
         })
     },[])

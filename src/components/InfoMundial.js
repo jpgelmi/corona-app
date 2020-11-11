@@ -27,16 +27,13 @@ export default function GeneralData(){
     }
 
     const formatted_date = yyyy + "-" + mm + "-" + dd
-    console.log(formatted_date)
 
     const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile` 
-    console.log(URL_HOST)
     useEffect(() => {
 
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result.total)
             setInfoMundial(result.total)
         })
     },[])

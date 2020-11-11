@@ -10,7 +10,8 @@ import Carousel from "./src/components/Carousel"
 import InfoMundial from "./src/components/InfoMundial"
 import InfoChile from "./src/components/InfoChile"
 import { ScrollView } from 'react-native-gesture-handler'
-import GraficoChile from "./src/components/GraficoChile"
+import GraficoActivos from "./src/components/GraficoActivos"
+import GraficoNuevos from "./src/components/GraficoNuevos"
 
 export default function App() {  
   return (
@@ -23,7 +24,8 @@ export default function App() {
           <InfoChile/>
         </View>
         <View style = {{alignItems: "center"}}>
-          <GraficoChile/> 
+          <GraficoActivos/>
+          <GraficoNuevos/>
         </View>
         <Carousel/>
       <TouchableOpacity
