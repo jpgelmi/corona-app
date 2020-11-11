@@ -8,8 +8,6 @@ GitHub issues"><img src="https://img.shields.io/github/forks/jpgelmi/Corona-app"
 
 <h2 align="center">CoronaApp Chile</h2>
 
-If you'd like to join them, please consider:
-
 ## Info
 Using an external API I created an app that displays the info of active cases, total deaths and new cases...
 
