@@ -27,7 +27,7 @@ git clone https://github.com/jpgelmi/Corona-app
 ```sh
 npm install
 ```
-3. Run android (Recommended
+3. Run android (Recommended)
 ```sh
-   npx react-native run-android
+npx react-native run-android
 ```
