@@ -15,6 +15,5 @@ This App will offer you an update on the Covid-19 pandemic in Chile and the worl
 <img src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/Screenshot_20201110-232753_CoronaApp.jpg" height="500"/> <img src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/Screenshot_20201110-233557_CoronaApp.jpg" height="500"/> <img src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/Screenshot_20201110-233605_CoronaApp.jpg" height="500"/>
 
 ## API
-For this proyect I use two Api
   * [Postman Api](https://documenter.getpostman.com/view/10808728/SzS8rjbc)
   * [covid19tracking Api](https://covid19tracking.narrativa.com/index_en.html)
