@@ -17,3 +17,17 @@ This App will offer you an update on the Covid-19 pandemic in Chile and the worl
 ## API
   * [Postman Api](https://documenter.getpostman.com/view/10808728/SzS8rjbc)
   * [covid19tracking Api](https://covid19tracking.narrativa.com/index_en.html)
+
+## Installation
+1. Clone the repo
+```sh
+git clone https://github.com/jpgelmi/Corona-app
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Run android (Recommended
+```sh
+   npx react-native run-android
+```
