@@ -37,7 +37,7 @@ export default function GeneralData(props){
                     />
                 </View>
                 
-                <View style = {{alignItems: "center", flex: 1}}>
+                <View style = {{alignItems: "center", flex: 1, paddingTop:16}}>
                     <View style = {[styles.mini_card, {backgroundColor: colors.primario_rojo}]}>
                         <Text style = {styles.textInfo}>
                             Casos Totales
