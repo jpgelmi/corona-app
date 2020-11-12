@@ -10,7 +10,6 @@ import {
 import colors from "../config/colors"
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const{width} = Dimensions.get("window")
 const ITEM_WIDTH = Math.round(width * 0.6)
@@ -90,7 +89,6 @@ export default function CarouselVertical(){
 function RenderItem(props){
 
     const{data} = props
-
 
     return(
         <View style = {styles.container}>
