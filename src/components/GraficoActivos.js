@@ -84,7 +84,7 @@ import {
           backgroundGradientFrom: "#E8E9EB",
           backgroundGradientTo: "#F0F0F0",
           decimalPlaces: 0, // optional, defaults to 2dp
-          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          color: (opacity = 1) => `rgba(18,105,148, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
           style: {
             borderRadius: 16

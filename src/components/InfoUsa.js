@@ -75,7 +75,7 @@ export default function GeneralData(){
     }else{
         return(
             <View style = {{flex: 1, paddingTop: 100}}>
-                <ActivityIndicator size = {100} color = {colors.primario_rojo}/>
+                <ActivityIndicator size = {100} color = {"#808080"}/>
             </View>
         )
     }}       

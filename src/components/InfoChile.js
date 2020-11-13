@@ -73,7 +73,7 @@ export default function infoChile(){
                 </View>
                
                 <View style = {{alignItems: "center", flex: 1}}>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.primario_verde}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Casos Totales
                         </Text>
@@ -83,7 +83,7 @@ export default function infoChile(){
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.secundario_verde}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Casos Activos
                         </Text>
@@ -93,7 +93,7 @@ export default function infoChile(){
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.verde_agua}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Muertes Totales
                         </Text>
@@ -109,7 +109,7 @@ export default function infoChile(){
     }else{
         return(
             <View style = {{flex: 1, paddingTop: 100}}>
-                <ActivityIndicator size = {100} color = {colors.primario_verde}/>
+                <ActivityIndicator size = {100} color = {colors.secundario}/>
             </View>
         )
     }}       
@@ -137,13 +137,14 @@ const styles = StyleSheet.create({
         height: 100,
         width: "95%",
         backgroundColor: "red",
-        borderRadius: 20
+        borderRadius: 20,
+        backgroundColor: colors.secundario
     },
     textInfo:{
         fontWeight: "bold",
         fontSize: 15,
         margin: 7,
-        color: colors.blanco
+        color: colors.blanco,
     },
     textCifra:{
         fontWeight: "bold",

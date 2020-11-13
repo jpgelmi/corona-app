@@ -8,7 +8,6 @@ import {
 } from 'react-native'
 
 import InfoUsa from '../components/InfoUsa'
-import GraficoMundo from "../components/GraficoMundo"
 import InfoMundial from "../components/InfoMundial"
 import InfoPais from "../components/InfoPais"
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -18,9 +17,6 @@ export default function General(){
     return(
         <SafeAreaView style = {styles.containerSafe}>
             <ScrollView>
-                <View style = {{alignItems: "center"}}>
-                    <GraficoMundo/>
-                </View>
                 <View style = {styles.container}>
                     <InfoMundial/>
                     <InfoUsa
