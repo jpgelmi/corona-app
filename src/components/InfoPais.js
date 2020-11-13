@@ -38,7 +38,7 @@ export default function GeneralData(props){
                 </View>
                 
                 <View style = {{alignItems: "center", flex: 1, paddingTop:16}}>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.primario_rojo}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Casos Totales
                         </Text>
@@ -48,7 +48,7 @@ export default function GeneralData(props){
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.secundario_rojo}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Casos Activos
                         </Text>
@@ -58,7 +58,7 @@ export default function GeneralData(props){
                             </Text>
                         </View>
                     </View>
-                    <View style = {[styles.mini_card, {backgroundColor: colors.rojo_agua}]}>
+                    <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
                             Muertes Totales
                         </Text>
@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
         height: 100,
         width: "95%",
         backgroundColor: "red",
-        borderRadius: 20
+        borderRadius: 20,
+        backgroundColor: "#808080"
     },
     textInfo:{
         fontWeight: "bold",

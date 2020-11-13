@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     },
     textCifra:{
         fontWeight: "bold",
-        fontSize: 16,
+        fontSize: 25,
         margin: 5,
         color: colors.blanco
     }

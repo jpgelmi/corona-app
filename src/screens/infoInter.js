@@ -22,15 +22,35 @@ export default function General(){
                 </View>
                 <View style = {styles.container}>
                     <InfoMundial/>
-                    <InfoPais pais = {"colombia"} nombre = {"Colombia"} code = {"CO"}/>
+                    <InfoPais
+                        pais = {"colombia"}
+                        nombre = {"Colombia"}
+                        code = {"CO"}
+                    />
                 </View>
                 <View style = {styles.container}>
-                    <InfoPais pais = {"united-kingdom"} nombre = {"Reino Unido"} code = {"GB"}/>
-                    <InfoPais pais = {"france"} nombre = {"Francia"} code = {"FR"}/>
+                    <InfoPais
+                        pais = {"united-kingdom"}
+                        nombre = {"Reino Unido"}
+                        code = {"GB"}
+                    />
+                    <InfoPais
+                        pais = {"germany"}
+                        nombre = {"Alemania"}
+                        code = {"DE"}
+                    />
                 </View>
                 <View style = {styles.container}>
-                    <InfoPais pais = {"argentina"} nombre = {"Argentina"} code = {"AR"}/>
-                    <InfoPais pais = {"germany"} nombre = {"Alemania"} code = {"DE"}/>
+                    <InfoPais
+                        pais = {"argentina"}
+                        nombre = {"Argentina"}
+                        code = {"AR"}
+                    />
+                    <InfoPais
+                        pais = {"france"}
+                        nombre = {"Francia"}
+                        code = {"FR"}
+                    />
                 </View>
             </ScrollView>
         </SafeAreaView>
