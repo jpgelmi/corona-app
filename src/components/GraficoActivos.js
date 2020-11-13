@@ -33,7 +33,6 @@ import {
         for (let i = 0; i <= 11; i++) {
           if (i <= mes) {
             Label.push(meses[i]);
-            console.log(Label);
           }
         }
       }
@@ -43,7 +42,6 @@ import {
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            //console.log(result)
             setData(result)
         })
     }, [])
@@ -58,7 +56,6 @@ import {
         });
     }
     
-    console.log(ListaNum)
     return(
       <View>
           <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>

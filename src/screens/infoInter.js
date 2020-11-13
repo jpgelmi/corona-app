@@ -7,6 +7,7 @@ import {
     ActivityIndicator
 } from 'react-native'
 
+import InfoUsa from '../components/InfoUsa'
 import GraficoMundo from "../components/GraficoMundo"
 import InfoMundial from "../components/InfoMundial"
 import InfoPais from "../components/InfoPais"
@@ -22,7 +23,7 @@ export default function General(){
                 </View>
                 <View style = {styles.container}>
                     <InfoMundial/>
-                    <InfoPais
+                    <InfoUsa
                         pais = {"colombia"}
                         nombre = {"Colombia"}
                         code = {"CO"}

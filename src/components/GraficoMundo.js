@@ -33,7 +33,6 @@ import {
         for (let i = 0; i <= 11; i++) {
           if (i <= mes) {
             Label.push(meses[i]);
-            console.log(Label);
           }
         }
       }

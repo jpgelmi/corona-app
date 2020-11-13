@@ -37,7 +37,6 @@ export default function getDataPais(pais){
     return fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result)
             return (result)
         })
 
