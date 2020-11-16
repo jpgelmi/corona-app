@@ -20,8 +20,8 @@ import infoInter from "./src/screens/infoInter"
     return(
       <NavigationContainer >
         <Drawer.Navigator initialRouteName="Info Chile">
-          <Drawer.Screen name="Info Chile" component={MainScreen} />
-          <Drawer.Screen name="Info internacional " component={infoInter} />
+          <Drawer.Screen name="Chile" component={MainScreen} />
+          <Drawer.Screen name="Mundo" component={infoInter} />
         </Drawer.Navigator>
       </NavigationContainer>
     )
