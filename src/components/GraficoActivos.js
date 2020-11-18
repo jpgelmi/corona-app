@@ -58,10 +58,7 @@ import {
     
     return(
       <View>
-          <Text style = {{fontWeight: "bold", fontSize: 19, marginTop: 12}}>
-              Informacion Chile
-          </Text>
-          <Text style = {{fontWeight: "bold", fontSize: 15, marginTop: 6}}>
+          <Text style = {{fontWeight: "bold", fontSize: 15, marginTop: 20}}>
             Casos activos
           </Text>
       <LineChart

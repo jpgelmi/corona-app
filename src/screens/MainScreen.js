@@ -24,13 +24,15 @@ export default function MainScreen() {
           <GraficoActivos/>
           <GraficoNuevos/>
         </View>
-        <Carousel/>
-      <TouchableOpacity
-        style = {{alignItems: "center"}}
-        onPress = {() =>Linking.openURL("https://www.instagram.com/jpgelmi/")}
-      >
-        <Text style = {styles.footerText}>Juan Pablo Gelmi /@jpgelmi</Text>
-      </TouchableOpacity>
+        <View style = {{marginBottom: 60}}>
+          <Carousel/>
+          <TouchableOpacity
+            style = {{alignItems: "center"}}
+            onPress = {() =>Linking.openURL("https://www.instagram.com/jpgelmi/")}
+          >
+              <Text style = {styles.footerText}>Juan Pablo Gelmi /@jpgelmi</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -38,7 +40,6 @@ export default function MainScreen() {
 
 const styles = StyleSheet.create({
   container:{
-    //flex: 1,
     alignItems: "center"
   },
   footerText:{

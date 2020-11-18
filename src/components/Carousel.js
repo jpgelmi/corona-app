@@ -34,7 +34,6 @@ export default function CarouselVertical(){
         mm = "0"+ mm
     }
 
-
     const formatted_date = yyyy + "-" + mm + "-" + dd
 
     const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile` 
@@ -90,7 +89,7 @@ function RenderItem(props){
             <Text style = {styles.text}>
                 {data.item.name_es}
             </Text>
-            <View style = {{alignItems: "center", flex: 1}}>
+            <View style = {{alignItems: "center"}}>
                 <View style = {[styles.mini_card, {backgroundColor: colors.secundario}]}>
                     <Text style = {styles.textInfo}>
                         Casos Activos
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#F0F0F0",
         marginVertical: 10,
         padding: 15,
-        flex: 1
+        //marginHorizontal:30,
     },
     text: {
         fontWeight: "bold",

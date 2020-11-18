@@ -14,7 +14,8 @@ import colors from "../config/colors"
 export default function infoChile(){
 
     const [infoChile, setInfoChile] = useState(null)
-    //Sacar la fecha de hoy y de ayer
+    const [intervalo, setIntervalo] = useState(null)
+
     const current_date = new Date()
     
     let dd = current_date.getDate()
@@ -57,6 +58,35 @@ export default function infoChile(){
             setInfoChile(result)
         })
     },[])
+
+    let date_interval = new Date();
+    date_interval.setDate(date_interval.getDate() - 2);
+
+    let interval_dd = date_interval.getDate()
+    let interval_mm = date_interval.getMonth() + 1
+    let interval_yyyy = date_interval.getFullYear()
+
+    if(interval_dd<10){
+        interval_dd = "0"+ interval_dd
+    }
+
+    if(interval_mm<10){
+        interval_mm = "0"+ inteval_mm
+    }
+
+    const formated_date_interval = interval_yyyy + "-" + interval_mm + "-" + interval_dd
+
+
+    const URL_HOST2 = `https://api.covid19api.com/country/chile?from=${formated_date_interval}T00:00:00Z&to=${formatted_last_date}T00:00:00Z` 
+    useEffect(() => {
+
+        fetch(URL_HOST2)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result[0].Confirmed)
+            setIntervalo(result[0].Confirmed)
+        })
+    },[])
     
 
     {if(infoChile){
@@ -67,19 +97,19 @@ export default function infoChile(){
                     Información {"\n"} Chile 
                 </Text>
                 <Flag
-                        code="CL"
-                        size={32}
+                    code="CL"
+                    size={32}
                 />
                 </View>
                
                 <View style = {{alignItems: "center", flex: 1}}>
                     <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
-                            Casos Totales
+                            Nuevos Casos 
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {infoChile[0].Confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile[0].Confirmed -  intervalo).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -90,6 +120,16 @@ export default function infoChile(){
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
                                 {((infoChile[0].Active)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                            </Text>
+                        </View>
+                    </View>
+                    <View style = {styles.mini_card}>
+                        <Text style = {styles.textInfo}>
+                            Casos Totales
+                        </Text>
+                        <View style = {{alignItems: "center"}}>
+                            <Text style = {styles.textCifra}>
+                                {infoChile[0].Confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -118,15 +158,15 @@ export default function infoChile(){
 const styles = StyleSheet.create({
     container:{
         //elevation: 1,
-        width: 200,
-        height: 460, 
+        width: "90%",
+        height: "100%", 
         borderRadius:20,
         borderColor: "#000",
         backgroundColor: "#F0F0F0",
         marginVertical: 20,
         marginHorizontal: 15,
         padding: 20,
-        flex: 1
+        marginTop: 50
     },
     text: {
         fontWeight: "bold",
