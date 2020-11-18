@@ -28,7 +28,7 @@ export default function MainScreen() {
           <Carousel/>
           <TouchableOpacity
             style = {{alignItems: "center"}}
-            onPress = {() =>Linking.openURL("https://www.instagram.com/jpgelmi/")}
+            onPress = {() =>Linking.openURL("https://github.com/jpgelmi")}
           >
               <Text style = {styles.footerText}>Juan Pablo Gelmi /@jpgelmi</Text>
           </TouchableOpacity>

@@ -14,14 +14,14 @@ import { NavigationContainer } from '@react-navigation/native';
 const Drawer = createDrawerNavigator();
 
 import MainScreen from "./src/screens/MainScreen"
-import infoInter from "./src/screens/infoInter"
+import InfoInter from "./src/screens/infoInter"
 
   export default function App(){
     return(
       <NavigationContainer >
         <Drawer.Navigator initialRouteName="Info Chile">
           <Drawer.Screen name="Chile" component={MainScreen} />
-          <Drawer.Screen name="Mundo" component={infoInter} />
+          <Drawer.Screen name="Mundo" component={InfoInter} />
         </Drawer.Navigator>
       </NavigationContainer>
     )

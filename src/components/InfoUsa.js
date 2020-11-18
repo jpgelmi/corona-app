@@ -60,7 +60,7 @@ export default function GeneralData(){
                         </View>
                     </View>
                     <View style = {styles.mini_card}>
-                        <Text style = {styles.textInfo}>
+                        <Text style = {[styles.textInfo, {fontSize: 14}]}>
                             Muertes Totales
                         </Text>
                         <View style = {{alignItems: "center"}}>
@@ -84,8 +84,8 @@ export default function GeneralData(){
 const styles = StyleSheet.create({
     container:{
         //elevation: 1,
-        width: 200,
-        height: 460, 
+        width: "100%",
+        height: "95%", 
         borderRadius:20,
         borderColor: "#000",
         backgroundColor: "#F0F0F0",
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
     mini_card:{
         marginTop: 20,
-        height: 100,
+        height: "27%",
         width: "95%",
         backgroundColor: "red",
         borderRadius: 20,

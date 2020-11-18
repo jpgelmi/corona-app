@@ -45,6 +45,7 @@ export default function infoChile(){
         last_mm = "0"+ last_mm
     }
 
+    const updateDate = dd + "-" + mm + "-" + yyyy
     const formatted_date = yyyy + "-" + mm + "-" + dd
     
     const formatted_last_date = last_yyyy + "-" + last_mm + "-" + last_dd
@@ -143,6 +144,11 @@ export default function infoChile(){
                             </Text>
                         </View>
                     </View>
+                    <View style = {styles.footer}>
+                        <Text style = {styles.textFooter}>
+                            Última actualización {updateDate}
+                        </Text>
+                    </View>
                 </View>
             </View>
             )
@@ -159,7 +165,7 @@ const styles = StyleSheet.create({
     container:{
         //elevation: 1,
         width: "90%",
-        height: "100%", 
+        height: "95%", 
         borderRadius:20,
         borderColor: "#000",
         backgroundColor: "#F0F0F0",
@@ -191,5 +197,11 @@ const styles = StyleSheet.create({
         fontSize: 25,
         margin: 5,
         color: colors.blanco
+    },
+    footer:{
+        paddingTop: 10
+    },
+    textFooter:{
+        //fontWeight: "bold"
     }
 })
