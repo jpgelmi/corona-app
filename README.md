@@ -1,4 +1,4 @@
-<p align="center"><img width="100" src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/coronavirus.png" alt="CoronaApp logo"></p>
+<p align="center"><img width="1000" src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/CoronaApp.png" alt="CoronaApp banner"></p>
 
 <p align="center">
   <img src="https://img.shields.io/github/issues/jpgelmi/Corona-app" alt="
@@ -7,6 +7,9 @@ GitHub issues"><img src="https://img.shields.io/github/forks/jpgelmi/Corona-app"
 </p>
 
 <h2 align="center">CoronaApp Chile</h2>
+
+
+
 
 ## Info
 This App will offer you an update on the Covid-19 pandemic in Chile and the world. Some ideas for the future with this app are integrating more countries and be capable of showing more information on the regions of each country.
