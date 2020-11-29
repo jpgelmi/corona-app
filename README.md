@@ -13,9 +13,10 @@ This App will offer you an update on the Covid-19 pandemic in Chile and the worl
 
 ## General view
 <img src="https://github.com/jpgelmi/Corona-app/blob/main/src/assets/gif2.gif" height="500"/>
+
 ## API
-  * [Postman Api](https://documenter.getpostman.com/view/10808728/SzS8rjbc)
-  * [covid19tracking Api](https://covid19tracking.narrativa.com/index_en.html)
+  * [Postman-Api](https://documenter.getpostman.com/view/10808728/SzS8rjbc)
+  * [covid19tracking-Api](https://covid19tracking.narrativa.com/index_en.html)
 
 ## Installation
 1. Clone the repo
