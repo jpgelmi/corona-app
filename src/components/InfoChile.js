@@ -35,14 +35,14 @@ export default function infoChile(){
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            //console.log(result.dates[0].countries.Chile)
-            setInfoChile(result.dates[formatted_date].countries.Chile)
+            setInfoChile(result.dates[formatted_date])
         })
-    },[])
-    
-    console.log(infoChile)
+    },[]) 
 
     {if(infoChile){
+        const update = infoChile.info.date
+        const sp = update.split(" ")
+
         return(
             <View style = {styles.container}>
                 <View style = {{flexDirection: "row", justifyContent: "space-between"}}>
@@ -62,7 +62,7 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {(infoChile.today_new_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.countries.Chile.today_new_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -72,7 +72,7 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {(infoChile.today_new_deaths).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.countries.Chile.today_new_deaths).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -82,7 +82,7 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {(infoChile.today_open_cases).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.countries.Chile.today_open_cases).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text> 
                         </View>
                     </View>
@@ -92,13 +92,13 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {(infoChile.today_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.countries.Chile.today_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
                     <View style = {styles.footer}>
                         <Text style = {styles.textFooter}>
-                            Última actualización {formatted_date}
+                            Datos de: {sp[0]}
                         </Text>
                     </View>
                 </View>
