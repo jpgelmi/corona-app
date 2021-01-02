@@ -3,7 +3,6 @@ import {
     StyleSheet,
     View,
     Text,
-    Dimensions,
     ActivityIndicator
 } from 'react-native'
 
@@ -28,6 +27,7 @@ export default function GeneralData(){
 
     const formatted_date = yyyy + "-" + mm + "-" + dd
 
+    //Obtener info de el ultimo recurso de la Api, Ver documentación
     const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile` 
     useEffect(() => {
 
