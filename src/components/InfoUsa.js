@@ -20,7 +20,6 @@ export default function GeneralData(){
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result)
             setInfoMundial(result)
         })
     },[]) 

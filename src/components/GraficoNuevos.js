@@ -16,27 +16,6 @@ import {
     const ListaNum = [0]
     const URL_HOST = `https://api.covid19api.com/dayone/country/chile`
 
-    const mes = new Date().getMonth()
-    const year = new Date().getFullYear()
-
-    const meses = ["en", "feb","mzo", "abr", "my", "jun", "jul", "ago", "sep", "oct", "nov"]
-    let Label = []
-    
-    if(year === 2021){
-      let Label = meses
-      for(let i = 0; i <= 11; i++){
-        if (i <= mes) {
-          Label.push(meses[i])
-      }
-    }
-      } else {
-        for (let i = 0; i <= 11; i++) {
-          if (i <= mes) {
-            Label.push(meses[i]);
-          }
-        }
-      }
-
     useEffect(() => {
 
         fetch(URL_HOST)
@@ -63,7 +42,7 @@ import {
           </Text>
       <LineChart
         data={{
-          labels: Label,
+          labels: [],
           datasets: [
             { 
               data: ListaNum

@@ -3,18 +3,15 @@ import {
     StyleSheet,
     View,
     Text,
-    Dimensions,
     ActivityIndicator
 } from 'react-native'
 
 import Flag from 'react-native-flags';
-
 import colors from "../config/colors"
 
 export default function infoChile(){
 
     const [infoChile, setInfoChile] = useState(null)
-    const [intervalo, setIntervalo] = useState(null)
 
     const current_date = new Date()
     
@@ -30,65 +27,20 @@ export default function infoChile(){
         mm = "0"+ mm
     }
 
-    let last_date = new Date();
-    last_date.setDate(last_date.getDate() - 1);
-
-    let last_dd = last_date.getDate()
-    let last_mm = last_date.getMonth() + 1
-    let last_yyyy = last_date.getFullYear()
-
-    if(last_dd<10){
-        last_dd = "0"+ last_dd
-    }
-
-    if(last_mm<10){
-        last_mm = "0"+ last_mm
-    }
-
-    const updateDate = dd + "-" + mm + "-" + yyyy
     const formatted_date = yyyy + "-" + mm + "-" + dd
-    
-    const formatted_last_date = last_yyyy + "-" + last_mm + "-" + last_dd
 
-    const URL_HOST = `https://api.covid19api.com/country/chile?from=${formatted_last_date}T00:00:00Z&to=${formatted_date}T00:00:00Z` 
+    const URL_HOST = `https://api.covid19tracking.narrativa.com/api/${formatted_date}/country/chile/region/chile` 
     useEffect(() => {
 
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            setInfoChile(result)
-        })
-    },[])
-
-    let date_interval = new Date();
-    date_interval.setDate(date_interval.getDate() - 2);
-
-    let interval_dd = date_interval.getDate()
-    let interval_mm = date_interval.getMonth() + 1
-    let interval_yyyy = date_interval.getFullYear()
-
-    if(interval_dd<10){
-        interval_dd = "0"+ interval_dd
-    }
-
-    if(interval_mm<10){
-        interval_mm = "0"+ inteval_mm
-    }
-
-    const formated_date_interval = interval_yyyy + "-" + interval_mm + "-" + interval_dd
-
-
-    const URL_HOST2 = `https://api.covid19api.com/country/chile?from=${formated_date_interval}T00:00:00Z&to=${formatted_last_date}T00:00:00Z` 
-    useEffect(() => {
-
-        fetch(URL_HOST2)
-        .then((response) => response.json())
-        .then((result) => {
-            console.log(result[0].Confirmed)
-            setIntervalo(result[0].Confirmed)
+            //console.log(result.dates[0].countries.Chile)
+            setInfoChile(result.dates[formatted_date].countries.Chile)
         })
     },[])
     
+    console.log(infoChile)
 
     {if(infoChile){
         return(
@@ -110,7 +62,17 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {(infoChile[0].Confirmed -  intervalo).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.today_new_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                            </Text>
+                        </View>
+                    </View>
+                    <View style = {styles.mini_card}>
+                        <Text style = {styles.textInfo}>
+                            Muertes Hoy
+                        </Text>
+                        <View style = {{alignItems: "center"}}>
+                            <Text style = {styles.textCifra}>
+                                {(infoChile.today_new_deaths).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -120,8 +82,8 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoChile[0].Active)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                            </Text>
+                                {(infoChile.today_open_cases).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                            </Text> 
                         </View>
                     </View>
                     <View style = {styles.mini_card}>
@@ -130,23 +92,13 @@ export default function infoChile(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {infoChile[0].Confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                            </Text>
-                        </View>
-                    </View>
-                    <View style = {styles.mini_card}>
-                        <Text style = {styles.textInfo}>
-                            Muertes Totales
-                        </Text>
-                        <View style = {{alignItems: "center"}}>
-                            <Text style = {styles.textCifra}>
-                                {((infoChile[0].Deaths)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {(infoChile.today_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
                     <View style = {styles.footer}>
                         <Text style = {styles.textFooter}>
-                            Última actualización {updateDate}
+                            Última actualización {formatted_date}
                         </Text>
                     </View>
                 </View>
