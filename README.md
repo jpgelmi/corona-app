@@ -34,3 +34,5 @@ npm install
 ```sh
 npx react-native run-android
 ```
+# Bugs
+At this moment I am facing some bugs due to the change of the year. If you run the project it won't work properly. I am working to fix these issues and improve parts of the code for better optimization.
