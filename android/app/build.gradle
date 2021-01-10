@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.Corona_app"
+        applicationId "com.corona_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

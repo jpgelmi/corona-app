@@ -1,4 +1,4 @@
-package com.Corona_app;
+package com.corona_app;
 
 import com.facebook.react.ReactActivity;
 
