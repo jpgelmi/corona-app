@@ -13,19 +13,21 @@ import Flag from 'react-native-flags';
 
 export default function GeneralData(){
 
-    const [infoMundial, setInfoMundial] = useState(null)
+    const [infoMundial, setInfoMundial] = useState(false)
 
     const URL_HOST = `https://api.covidtracking.com/v1/us/current.json` 
     useEffect(() => {
         fetch(URL_HOST)
         .then((response) => response.json())
         .then((result) => {
-            setInfoMundial(result)
+            console.log(result[0])
+            setInfoMundial(result[0])
         })
     },[]) 
     
 
     {if(infoMundial){
+        console.log(infoMundial.recovered);
         return(
             <View style = {styles.container}>
                     <Text style = {styles.text}>
@@ -44,17 +46,17 @@ export default function GeneralData(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {infoMundial[0].positive.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {infoMundial.positive.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
                     <View style = {styles.mini_card}>
                         <Text style = {styles.textInfo}>
-                            Recuperados
+                            Hospitalizados
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoMundial[0].recovered)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {infoMundial.hospitalized.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>
@@ -64,7 +66,7 @@ export default function GeneralData(){
                         </Text>
                         <View style = {{alignItems: "center"}}>
                             <Text style = {styles.textCifra}>
-                                {((infoMundial[0].death)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                                {((infoMundial.death)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </Text>
                         </View>
                     </View>

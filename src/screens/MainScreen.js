@@ -7,7 +7,6 @@ import {
   View,
   Text} from 'react-native'
 import Carousel from "../components/Carousel"
-import InfoMundial from "../components/InfoMundial"
 import InfoChile from "../components/InfoChile"
 import { ScrollView } from 'react-native-gesture-handler'
 import GraficoActivos from "../components/GraficoActivos"
